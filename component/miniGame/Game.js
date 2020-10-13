@@ -9,14 +9,17 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
-import rock from '../assets/rock.jpg';
-import paper from '../assets/paper.jpg';
-import scissor from '../assets/scissor.jpg';
+import rock_right from '../assets/rock_right.jpg';
+import paper_right from '../assets/paper_right.jpg';
+import scissor_right from '../assets/scissor_right.jpg';
+import rock_left from '../assets/rock_left.jpg';
+import paper_left from '../assets/paper_left.jpg';
+import scissor_left from '../assets/scissor_left.jpg';
 
 const arr = [
-  {number: 0, image: rock},
-  {number: 1, image: paper},
-  {number: 2, image: scissor},
+  {number: 0, image: rock_right},
+  {number: 1, image: paper_right},
+  {number: 2, image: scissor_right},
 ];
 
 const Game = () => {
@@ -59,32 +62,32 @@ const Game = () => {
           <TouchableOpacity
             style={styles.content}
             onPress={() => {
-              setYouIcon(rock);
-              setYouNumber(0);
+              setYouIcon(rock_left);
+              setYouNumber(arr[0].number);
               setComputerIcon(randomItem.image);
               setComputerNumber(randomItem.number);
             }}>
-            <Image source={rock} style={styles.image} />
+            <Image source={rock_right} style={styles.image} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.content}
             onPress={() => {
-              setYouIcon(paper);
-              setYouNumber(1);
+              setYouIcon(paper_left);
+              setYouNumber(arr[1].number);
               setComputerIcon(randomItem.image);
               setComputerNumber(randomItem.number);
             }}>
-            <Image source={paper} style={styles.image} />
+            <Image source={paper_right} style={styles.image} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.content}
             onPress={() => {
-              setYouIcon(scissor);
-              setYouNumber(2);
+              setYouIcon(scissor_left);
+              setYouNumber(arr[2].number);
               setComputerIcon(randomItem.image);
               setComputerNumber(randomItem.number);
             }}>
-            <Image source={scissor} style={styles.image} />
+            <Image source={scissor_right} style={styles.image} />
           </TouchableOpacity>
         </View>
       </SafeAreaView>
