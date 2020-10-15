@@ -1,24 +1,48 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Feather from 'react-native-vector-icons/Feather';
 
 const WeightAge = () => (
   <View style={styles.container}>
     <View style={styles.layoutWeight}>
-      <Text style={{color: '#575a6b', marginTop: 5}}>WEIGHT</Text>
+      <Text style={styles.text}>WEIGHT</Text>
       <Text style={styles.result}>50</Text>
       <View style={styles.item}>
-        <MaterialCommunityIcons name="plus-circle" size={45} color="#5c626d" />
-        <MaterialCommunityIcons name="minus-circle" size={45} color="#5c626d" />
+        <TouchableOpacity>
+          <MaterialCommunityIcons
+            name="plus-circle"
+            size={45}
+            color="#5e606e"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <MaterialCommunityIcons
+            name="minus-circle"
+            size={45}
+            color="#5e606e"
+          />
+        </TouchableOpacity>
       </View>
     </View>
     <View style={styles.layoutAge}>
-      <Text style={{color: '#575a6b', marginTop: 5}}>AGE</Text>
+      <Text style={styles.text}>AGE</Text>
       <Text style={styles.result}>20</Text>
       <View style={styles.item}>
-        <MaterialCommunityIcons name="plus-circle" size={45} color="#5c626d" />
-
-        <MaterialCommunityIcons name="minus-circle" size={45} color="#5c626d" />
+        <TouchableOpacity>
+          <MaterialCommunityIcons
+            name="plus-circle"
+            size={45}
+            color="#5e606e"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <MaterialCommunityIcons
+            name="minus-circle"
+            size={45}
+            color="#5e606e"
+          />
+        </TouchableOpacity>
       </View>
     </View>
   </View>
@@ -58,6 +82,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-around',
+    marginTop: 5,
+  },
+  text: {
+    color: '#848694',
     marginTop: 5,
   },
 });

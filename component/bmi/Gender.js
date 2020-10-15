@@ -15,8 +15,8 @@ const GenderSelection = ({gender, setGender}) => (
         {backgroundColor: gender === 'male' ? '#24263b' : '#323344'},
       ]}
       onPress={() => setGender('male')}>
-      <Foundation name="male-symbol" size={90} color="#09c9e3" />
-      <Text style={{color: '#575a6b'}}>MALE</Text>
+      <Foundation name="male-symbol" size={90} color="#51caef" />
+      <Text style={{color: '#848694'}}>MALE</Text>
     </TouchableOpacity>
 
     <TouchableOpacity
@@ -25,8 +25,8 @@ const GenderSelection = ({gender, setGender}) => (
         {backgroundColor: gender === 'female' ? '#24263b' : '#323344'},
       ]}
       onPress={() => setGender('female')}>
-      <Foundation name="female-symbol" size={90} color="#da4147" />
-      <Text style={{color: '#575a6b'}}>FEMALE</Text>
+      <Foundation name="female-symbol" size={90} color="#f15123" />
+      <Text style={{color: '#848694'}}>FEMALE</Text>
     </TouchableOpacity>
   </View>
 );
