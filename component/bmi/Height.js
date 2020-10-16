@@ -1,17 +1,19 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Slider from '@react-native-community/slider';
-const Height = () => (
+const Height = ({height, setHeight}) => (
   <View style={styles.layoutHeight}>
     <Text style={styles.text}>HEIGHT</Text>
     <View style={{flexDirection: 'row'}}>
-      <Text style={styles.resultHeight}> 150</Text>
+      <Text style={styles.resultHeight}> {height}</Text>
       <Text style={styles.cm}> cm</Text>
     </View>
     <Slider
       style={styles.slider}
+      step={1}
       minimumValue={0}
       maximumValue={250}
+      onValueChange={setHeight}
       minimumTrackTintColor="#604356"
       maximumTrackTintColor="#000000"
     />
@@ -40,11 +42,11 @@ const styles = StyleSheet.create({
     color: '#848694',
     marginTop: 5,
   },
-  slider:{
-    width: '100%', 
-    marginTop: 20, 
-    marginBottom: 15
-  }
+  slider: {
+    width: '100%',
+    marginTop: 20,
+    marginBottom: 15,
+  },
 });
 
 export default Height;

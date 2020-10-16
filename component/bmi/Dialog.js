@@ -11,31 +11,63 @@ import {
 import React from 'react';
 
 const {width, height} = Dimensions.get('window');
-const Dialog = ({modalVisible, setModalVisible}) => (
-  <Modal
-    animationType="slide"
-    transparent={true}
-    visible={modalVisible}
-    onRequestClose={() => {
-      Alert.alert('Modal has been closed.');
-    }}>
-    <View style={styles.centeredView}>
-      <View style={styles.modalView}>
-        <Text style={styles.modalText}>YOUR RESULT</Text>
-        <View style={styles.showContent}>
-          <Text style={styles.modalText}>BMI:</Text>
+
+const Dialog = ({
+  modalVisible,
+  setModalVisible,
+  setWeight,
+  setHeight,
+  setAge,
+}) => {
+ 
+  var type;
+  var reason;
+  if (0 < 18.5) {
+    type = <Text style={styles.textType}>underwieght</Text>;
+    reason = <Text style={styles.textReason}>
+    You need to regularly monitor your height and weight</Text>;
+  } else if (18.5 < 0 < 24.9) {
+    type = <Text style={[styles.textType, {color: '#00CCFF'}]}>normal</Text>;
+    reason = <Text style={styles.textReason}>perfect, standard weight</Text>;
+  } else if (0 >= 25) {
+    type = <Text style={[styles.textType, {color: '#FF0033'}]}>overweight</Text>;
+    reason = <Text style={styles.textReason}>
+    You need to regularly monitor your height and weight</Text>;
+  }
+
+  return (
+    <>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+        }}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>YOUR RESULT</Text>
+            <View style={styles.showContent}>
+              {type}
+              <Text style={[styles.modalText,{fontSize: 40}]}>BMI:</Text>
+              {reason}
+            </View>
+            <TouchableOpacity
+              style={styles.formBottom}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+                setAge(0);
+                setHeight(0);
+                setWeight(0);
+              }}>
+              <Text style={styles.textBottom}>RE-CALCULATE</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <TouchableOpacity
-          style={styles.formBottom}
-          onPress={() => {
-            setModalVisible(!modalVisible);
-          }}>
-          <Text style={styles.textBottom}>RE-CALCULATE</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  </Modal>
-);
+      </Modal>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -64,6 +96,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: 'white',
+  },
+  textType: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#FF9900'
+  },
+  textReason: {
+    marginHorizontal: 25,
+    textAlign: "center",
+    fontSize: 20,
+    color: '#fff'
   },
   textBottom: {
     fontSize: 20,
