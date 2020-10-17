@@ -6,9 +6,6 @@ import {
   View,
   Dimensions,
   TouchableOpacity,
-  Alert,
-  Modal,
-  TouchableHighlight,
 } from 'react-native';
 import React, {useState} from 'react';
 import Gender from './Gender';
@@ -44,7 +41,8 @@ const BMI = () => {
                     age={age} setAge={setAge}/>
         <TouchableOpacity style={styles.formBottom}
         onPress={() => {
-          setModalVisible(true);
+          height ===0 && weight ===0 && age ===0 ?
+            setModalVisible(false) : setModalVisible(true);
         }}
         >
           <Text style={styles.textBottom}>CALCULATE</Text>
