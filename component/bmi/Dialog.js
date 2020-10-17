@@ -22,17 +22,17 @@ const Dialog = ({
 }) => {
   var type;
   var reason;
-  if (0 < 18.5) {
+  if (result < 18.5) {
     type = <Text style={styles.textType}>underwieght</Text>;
     reason = (
       <Text style={styles.textReason}>
         You need to regularly monitor your height and weight
       </Text>
     );
-  } else if (18.5 < 0 < 24.9) {
+  } else if (18.5 < result < 24.9) {
     type = <Text style={[styles.textType, {color: '#00CCFF'}]}>normal</Text>;
     reason = <Text style={styles.textReason}>perfect, standard weight</Text>;
-  } else if (0 >= 25) {
+  } else if (result >= 25) {
     type = (
       <Text style={[styles.textType, {color: '#FF0033'}]}>overweight</Text>
     );
