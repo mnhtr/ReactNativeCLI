@@ -24,7 +24,7 @@ const BMI = () => {
   const [height,setHeight] = useState(0);
   const [weight,setWeight] = useState(0);
   const [age,setAge] = useState(0);
-  var result = 0;
+  const result = (weight/(height/100*height/100)).toFixed(2);;
   return (
     <>
       <StatusBar barStyle="default" backgroundColor="#1d2236" />
@@ -32,7 +32,8 @@ const BMI = () => {
       <Dialog modalVisible={modalVisible} setModalVisible={setModalVisible} result={result}
       setAge={setAge}
       setHeight={setHeight}
-      setWeight={setWeight}/>
+      setWeight={setWeight}
+      result={result}/>
         <View style={{alignItems: 'center'}}>
           <Text style={styles.title}>BMI CALCULATOR</Text>
           <View style={styles.reline} />

@@ -30,7 +30,8 @@ const WeightAge = ({weight, setWeight, age, setAge}) => (
       <Text style={styles.text}>AGE</Text>
       <Text style={styles.result}>{age}</Text>
       <View style={styles.item}>
-        <TouchableOpacity onPress={() => setAge(++age)}>
+        <TouchableOpacity onLongPress={() => setAge(++age)}
+        onPress={() => setAge(++age)}>
           <MaterialCommunityIcons
             name="plus-circle"
             size={45}
