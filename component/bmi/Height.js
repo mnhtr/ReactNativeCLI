@@ -11,6 +11,7 @@ const Height = ({height, setHeight}) => (
     <Slider
       style={styles.slider}
       step={1}
+      value={height}
       minimumValue={0}
       maximumValue={250}
       onValueChange={setHeight}
