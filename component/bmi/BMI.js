@@ -12,7 +12,7 @@ import Gender from './Gender';
 
 const {width, height} = Dimensions.get('window');
 import WeightAge from './WeightAge';
-import Height from './Height';
+// import Height from './Height';
 import Dialog from './Dialog';
 
 const BMI = () => {
@@ -40,7 +40,7 @@ const BMI = () => {
           <View style={styles.reline} />
         </View>
         <Gender gender={gender} setGender={setGender} />
-        <Height height={height} setHeight={setHeight} />
+        {/* <Height height={height} setHeight={setHeight} /> */}
         <WeightAge
           weight={weight}
           setWeight={setWeight}
